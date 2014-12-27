@@ -1,6 +1,7 @@
 class AuthorsController < ApplicationController
   before_action :set_author, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login, except: [:new, :create]
+  
   # GET /authors
   # GET /authors.json
   def index
