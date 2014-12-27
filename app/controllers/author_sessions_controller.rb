@@ -3,7 +3,7 @@ class AuthorSessionsController < ApplicationController
 
 
   def zero_authors_or_authenticated
-    unless Author.count === 0 || current_user
+    unless Author.count == 0 || current_user
       redirect_to root_path
       return false
     end
